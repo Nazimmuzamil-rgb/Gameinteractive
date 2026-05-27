@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <title>Unit 3.2 Jadual Penukaran Desimal ke Binari</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 40px;
+            background-color: #fff;
+        }
+        .header-box {
+            border: 2px solid #000;
+            padding: 20px;
+            margin-bottom: 25px;
+            background-color: #f9f9f9;
+        }
+        .header-title {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .header-subtitle {
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        .instruction {
+            font-size: 13px;
+            border-top: 1px dashed #ccc;
+            padding-top: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 2px solid #000;
+            padding: 15px;
+            text-align: center;
+            font-size: 14px;
+        }
+        th {
+            background-color: #eaeaea;
+            font-weight: bold;
+        }
+        .drop-box {
+            border: 2px dashed #555;
+            height: 40px;
+            width: 160px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+        .arrow-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .arrow-text {
+            font-size: 13px;
+            font-weight: bold;
+            border: 2px solid #000;
+            padding: 10px;
+            background-color: #f5f5f5;
+        }
+        .bank-box {
+            border: 2px solid #000;
+            padding: 15px;
+            background-color: #fff;
+            margin-bottom: 25px;
+        }
+        .bank-title {
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+        .item-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .drag-item {
+            border: 2px solid #000;
+            padding: 8px 15px;
+            font-weight: bold;
+            background-color: #fff;
+        }
+        .answer-box {
+            border: 2px solid #000;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .answer-title {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        .small-box {
+            display: inline-block;
+            border: 2px solid #000;
+            width: 35px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            background-color: #fff;
+            margin: 0 3px;
+        }
+        @media print {
+            body { margin: 20px; }
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Butang Cetak Alat Bantuan Sistem (Tidak Muncul Dalam PDF) -->
+    <div class="arrow-container no-print">
+        <button onclick="window.print()" style="padding: 10px 20px; font-weight: bold; cursor: pointer; background-color: #0056b3; color: white; border: none; border-radius: 4px;">⬇️ KLIK SINI UNTUK SAVE SEBAGAI PDF / CETAK</button>
+    </div>
+
+    <!-- Kotak Tajuk Atas Lembaran PDF -->
+    <div class="header-box">
+        <div class="header-title">UNIT 3: PERWAKILAN SISTEM BINARI</div>
+        <div class="header-subtitle">SUBTOPIK 3.2: PENUKARAN NOMBOR PERPULUHAN (DECIMAL) KEPADA PERDUAAN (BINARY)[cite: 8]</div>
+        <div class="instruction">
+            <strong>Arahan Pelajar:</strong> Selesaikan operasi pembahagian berulang di bawah[cite: 8]. Tulis atau seret nilai 
+            Hasil Bahagi dan nilai Baki yang betul ke dalam petak kosong yang disediakan[cite: 8].
+        </div>
+    </div>
+
+    <!-- Jadual Utama Format Cetakan -->
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 15%;">LANGKAH</th>
+                <th style="width: 25%;">OPERASI BAHAGI<br><small>(Nombor ÷ Asas 2)</small></th>
+                <th style="width: 30%;">ZON HASIL BAHAGI<br><small>(Bawa ke langkah bawah)</small></th>
+                <th style="width: 30%;">ZON CATATAN BAKI<br><small>(Jawapan Binari)</small></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Langkah 1</strong></td>
+                <td>25 ÷ 2</td>
+                <td><div class="drop-box"></div></td>
+                <td><div class="drop-box"></div> <span style="font-size:11px; font-weight:bold;"><br>(LSB - Bit Rendah)</span></td>
+            </tr>
+            <tr>
+                <td><strong>Langkah 2</strong></td>
+                <td>[ &nbsp; &nbsp; ] ÷ 2</td>
+                <td><div class="drop-box"></div></td>
+                <td><div class="drop-box"></div></td>
+            </tr>
+            <tr>
+                <td><strong>Langkah 3</strong></td>
+                <td>[ &nbsp; &nbsp; ] ÷ 2</td>
+                <td><div class="drop-box"></div></td>
+                <td><div class="drop-box"></div></td>
+            </tr>
+            <tr>
+                <td><strong>Langkah 4</strong></td>
+                <td>[ &nbsp; &nbsp; ] ÷ 2</td>
+                <td><div class="drop-box"></div></td>
+                <td><div class="drop-box"></div></td>
+            </tr>
+            <tr>
+                <td><strong>Langkah 5</strong></td>
+                <td>[ &nbsp; &nbsp; ] ÷ 2</td>
+                <td><div class="drop-box" style="background-color: #eaeaea; line-height: 40px;"><b>0</b></div></td>
+                <td><div class="drop-box"></div> <span style="font-size:11px; font-weight:bold;"><br>(MSB - Bit Tinggi)</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Aliran Arahan Pembatasan Pengiraan -->
+    <div class="arrow-container">
+        <div class="arrow-text">
+            🛑 Pembahagian TAMAT kerana Hasil Bahagi sudah mencapai NILAI 0.<br>
+            🔄 ARAHAN BACAAN JAWAPAN: Kumpulkan nilai baki dari bawah (MSB) ke atas (LSB).
+        </div>
+    </div>
+
+    <!-- Bank Data Pilihan Komponen Interaktif -->
+    <div class="bank-box">
+        <div class="bank-title">BANK JAWAPAN PILIHAN (Sistem Elemen Seret & Lepas):</div>
+        <div class="item-container">
+            <div class="drag-item">12</div>
+            <div class="drag-item">6</div>
+            <div class="drag-item">3</div>
+            <div class="drag-item">1</div>
+            <div class="drag-item">0</div>
+            <div class="drag-item">1</div>
+            <div class="drag-item">0</div>
+            <div class="drag-item">0</div>
+            <div class="drag-item">1</div>
+            <div class="drag-item">1</div>
+        </div>
+    </div>
+
+    <!-- Kotak Jawapan Akhir Lembaran PDF -->
+    <div class="answer-box">
+        <div class="answer-title">📝 RUANG JAWAPAN AKHIR:</div>
+        Nombor Perpuluhan 25<sub>10</sub> bersamaan dengan Nilai Perduaan: 
+        <span style="margin-left: 15px;">
+            <div class="small-box"></div>
+            <div class="small-box"></div>
+            <div class="small-box"></div>
+            <div class="small-box"></div>
+            <div class="small-box"></div> <sub>2</sub>
+        </span>
+    </div>
+
+</body>
+</html>
